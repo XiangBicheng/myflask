@@ -7,6 +7,7 @@ from wtforms.validators import DataRequired
 from datetime import datetime
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -21,6 +22,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 moment = Moment(app)
+migrate = Migrate(app, db)
 
 
 
